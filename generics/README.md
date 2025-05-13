@@ -136,7 +136,7 @@
 1. **Інтерфейс Write-only**
 
    ```csharp
-   interface IWriteRepository<in TEntity, in TKey> {
+   interface IWriteRepository<in TEntity, in TKey> { 
      void Add(TEntity entity);
      void Remove(TKey id);
    }
@@ -145,7 +145,7 @@
 3. **Перевірка контраваріантності**
 
    ```csharp
-   IWriteRepository<Person,int> persWrite = new InMemoryRepository<Student,int>();
+   IWriteRepository<Person,int> persWrite = new InMemoryRepository<Student,int>(); 
    IWriteRepository<Student,int> studWrite = persWrite;  // має компілюватися
    ```
 
